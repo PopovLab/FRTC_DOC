@@ -1,0 +1,331 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="FRTС project">
+    <meta name="author" content="Popov's Lab" >
+    <link rel="icon" href="..\../favicon.png">
+
+    <title>Применение теории возмущений к уравнениям лучевых траекторий &ndash; FRTС project</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="..\../css/pygments.css" rel="stylesheet">
+    <link href="..\../css/font-awesome.min.css" rel="stylesheet">
+    <link href="..\../css/local.css" rel="stylesheet">
+      <link  href="..\../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="..\../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="..\../index.html">FRTС project </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="..\index.html">Notes</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="..\../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="..\../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="..\../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="..\../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="..\../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="..\../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>Применение теории возмущений к уравнениям лучевых траекторий</h1>
+    <div class="container p-2 mb-4 bg-light border rounded-3">
+      <div class="row align-items-center justify-content-between">
+        <div class="col">
+          <ul class="list-inline" style="margin-bottom:0px; display:inline">
+          </ul>
+        </div>
+        <div class="col">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='..\index.html'>Notes</a></li>
+                <li class="breadcrumb-item"><a href='index.html'>Глава 1</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Применение теории возмущений к уравнениям лучевых траекторий</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-3">
+        <div class="card card-body bg-light" id="sidebar-toc">
+          <ul class="nav flex-column align-items">
+            <li class="nav-item">
+              <a class="nav-link" href="..\index.html">Notes</a>
+            </li>
+          </ul>
+          <hr>
+          <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="..\introduction.html">Введение</a>
+              <a class="nav-link" href="index.html">Глава 1</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="chapter_1_1.html">Лучевые траектории нижнегибридных волн</a>
+              <a class="nav-link active disabled" href="chapter_1_2.html">Применение теории возмущений к уравнениям лучевых траекторий</a>
+              <a class="nav-link" href="chapter_1_3.html">Метод построения сохраняющего фазовый объем дискретного отображения и его применение к задаче о распространении нижнегибридных волн</a>
+
+                </nav>
+              <a class="nav-link" href="..\chapter_2\index.html">Глава 2</a>
+                <nav class="nav nav-pills flex-column">
+                                <a class="nav-link" href="..\chapter_2\chapter_2_1.html">Структура доступного фазового пространства</a>
+              <a class="nav-link" href="..\chapter_2\chapter_2_2.html">Дискретное отображение для нижнегибридных волн...</a>
+
+                </nav>
+          </nav>
+        </div>
+      </div>
+
+    <div class="col-9" id='text'>
+      <p>1.2 Применение теории возмущений к задаче о траекториях</p>
+<p>Принципиальной причиной сложного поведения нижнегибридных волн в тороидальной 
+геометрии является изменение <script type="math/tex">k_\parallel</script> вдоль траектории.
+Грубо говоря, <script type="math/tex">k_\parallel</script> определяется выражением <script type="math/tex">k_\parallel\ = (m+nq)/Rq</script>, 
+где m и n тороидальиое волновые числа, R - расстояние до оси симметрии, q - запас устойчивости.
+Это выражение, справедливое для плазмы с круглым сечением магнитных поверхностей, легко получается из (1.6),
+если положить в нем <script type="math/tex">\Delta = \Delta' = 0, \lambda = 1, \gamma =0 </script>. 
+При этом <script type="math/tex">k_2=m, k_3=n</script>. Поэтому в дальнейшем, для наглядности, 
+мы будем использовать обозначения m и n вместо <script type="math/tex">k_2</script> и <script type="math/tex">k_3</script>.</p>
+<p>Тороидальное волновое число <script type="math/tex">n</script> является константой движения, 
+в то время как <script type="math/tex">m</script>, <script type="math/tex">R</script> и <script type="math/tex">q</script> могут изменяться вдоль траектории. 
+Поскольку <script type="math/tex">R</script> и <script type="math/tex">q</script> - известные функции координат, 
+главная проблема заключается в эволюции полоидального импульса <script type="math/tex">m</script>.
+Причиной несохранения <script type="math/tex">m</script> является полоидальная неоднородность системы. 
+Так, в цилиндрической плазме 
+(то есть когда <script type="math/tex">R</script> - постоянно, а магнитные поверхности имеют форму центрированных окружностей) 
+гамильтониан <script type="math/tex">H</script> не зависит от <script type="math/tex">\theta</script> и <script type="math/tex">m</script> является константой движения. 
+Факторами, определяющими несохранение m являются тороидальность, которая характеризуется 
+обратным аспектным отношением <script type="math/tex">\varepsilon = a/R_0</script> и некруговая форма магнитных поверхностей, которая в трехмоментном приближении задается функциями <script type="math/tex">\Delta, \lambda \: и \: \gamma</script>. Мы будем в дальнейшем принебрегать треугольностью <script type="math/tex">\gamma</script>,
+поскольку известно, что она не оказывает существенного влияния на поведение траекторий [78], 
+хотя принципиально не составляет большой сложности учитывать любое число гармоник в разложении магнитной поверхности.</p>
+<p>В качестве первого шага выглядит естественным считать эти факторы малыми и рассматривать их как возмущение в уравнениях лучевых траекторий. Формально это означает, что мы полагаем <script type="math/tex">\varepsilon, \Delta/a, \Lambda = \lambda-1 \ll 1 </script>, для удобства мы будем характеризовать их одним малым параметром <script type="math/tex">\varepsilon \ll 1</script>.
+Гамильтоновская функция  <script type="math/tex">H</script> после подстановки в нее выражений (1 -6), (1.7) для <script type="math/tex">k_\perp</script> и <script type="math/tex">k_\parallel</script> является функцией компонент метрического тензора <script type="math/tex">\hat{G}</script> и тензора диэлектрической проницаемости <script type="math/tex">\hat{K}</script>. 
+Компоненты <script type="math/tex">\hat{G}</script> могут быть разложены по <script type="math/tex">\varepsilon</script>, что дает: 
+<script type="math/tex">g_{ik}=g^0_{ik}(\rho) + g^1_{ik}(\rho, \theta) </script>, 
+где  <script type="math/tex">g^0_{ik}</script> диагональный тензор с ненулевыми компонентами 
+<script type="math/tex">g^0_{11} = 1</script>, <script type="math/tex">g^0_{22} = \rho^2</script>, <script type="math/tex">g^0_{22} = R^2_0</script> и <script type="math/tex">g^1 \sim \varepsilon</script>. 
+Аналогичным образом могут быть разложены и компоненты <script type="math/tex">\hat{K}</script>. 
+Подставляя эти разложения в уравнение (1.3) и 
+сохраняя члены нулевого и первого порядка по <script type="math/tex">\varepsilon</script> получим 
+<script type="math/tex; mode=display"> H_0(\rho, m, k_1) + H_1(\rho, \theta, m, k_1) = 0 \: \tag{1.9}</script> 
+где <script type="math/tex">H_0</script> совпадает с гамильтоновской функцией цилиндрического приближения, 
+а зависящий от угла член  <script type="math/tex">H_1</script> мал -  <script type="math/tex">H_1 \sim \varepsilon</script>.</p>
+<p>Для того, чтобы вычислить изменение m вдоль траектории удобно представить лучевые траектории в такой форме, 
+чтобы <script type="math/tex">\rho</script> являлось независимой переменной. 
+Эта цель может быть достигнута, если решить уравнение (1.9) относительно импульса <script type="math/tex">k_1</script> и 
+найти <script type="math/tex">k_1 = P^\alpha(\rho, m, \theta)</script> где <script type="math/tex">\alpha</script> определяет номер корня дисперсионного уравнения (1.9).
+Тогда m и <script type="math/tex">\theta</script> удовлетворяют каноническим уравнениям:</p>
+<p>
+<script type="math/tex; mode=display">\frac{dm}{d\rho} = \frac{dP^\alpha}{d\theta}, \: \frac{d\theta}{d\rho} = - \frac{dP^\alpha}{dm} \tag{1.10} </script>
+</p>
+<p>В зависимости от п и m уравнение (1.9) может иметь 2 или 4 действительных корня. Два из них описывают медленные волны, распространяющиеся в противоположных направлениях, другая пара, если она существует, относится к быстрой моде. Уравнения (1.10) определяют траекторию междду точками пересечения корней Ра. Эти точки являются точками поворота траектории и соответствуют отражению, если оба корня относятся к одной моде и трансформации, если к разным. В дальнейшем мы для простоты записи будем опускать индекс <script type="math/tex">\alpha</script>, подразумевая, что подход справедлив для обеих мод.</p>
+<p>Новый гамильтониан Р также может быть разложен по  <script type="math/tex">\varepsilon</script> - 
+<script type="math/tex">P = P_0(\rho, m) + P_1(\rho, m, \theta) </script>, где <script type="math/tex">P_1 \sim \varepsilon</script>. 
+Функция <script type="math/tex">P_1</script> периодична по полоидальному углу 0 и ее можно разложить в ряд Фурье: 
+<script type="math/tex"> P_1 = \sum f_p(\rho, m) \cos{\rho \theta}</script>.
+При этом вклад тороидальности пропорционален оов0 и входит в первую гармонику, остальные слагаемые связаны с некруговой формой магнитных поверхностей. Поскольку в Фурье разложение уравнения магнитной поверхности мы ограничились двумя слагаемыми (пропорциональными смещению и эллиптичности), 
+то и в разложение <script type="math/tex">P</script> с точностью до <script type="math/tex">\varepsilon</script> может быть оставлено два слагаемых.</p>
+<p>Решение системы (1.10) мы будем осуществлять последовательными приближениями по параметру порядке 
+по этому параметру <script type="math/tex">\varepsilon</script>. В нулевом порядке по этому параметру мы имеем </p>
+<p>
+<script type="math/tex; mode=display"> m = m_0,\: \theta(\rho)= \theta_0 + \Omega(\rho) \:,</script>
+</p>
+<p>где <script type="math/tex; mode=display">\Omega(\rho)= \frac{\partial}{\partial m} \int_{\rho}^{\rho_0} P_0(\rho', m) \, d\rho', </script>
+а <script type="math/tex">m_0, \theta_0, \rho_0 </script> - начальные значения переменных.</p>
+<p>Теперь, действуя по теории возмущений и учитывая, что изменение m является величиной порядка <script type="math/tex">\varepsilon</script>,
+мы можем при его вычислении считать m постоянным , а <script type="math/tex">\theta(\rho)</script> - взятым в нулевом приближении. Тогда, в первом поряке по <script type="math/tex">\varepsilon</script> получим:</p>
+<p>
+<script type="math/tex; mode=display">m(\rho) =m_0  \frac{\partial}{\partial \theta_0} \int_{\rho}^{\rho_0} P(\rho', m_0, \theta_0 + \Omega(\rho', m_0)) \,d\rho' \tag{1.11}</script>
+</p>
+<p>Это выражение, вообще говоря, и есть итог непосредственного применения теории возмущений. 
+Естественно, оно справедливо при <script type="math/tex">\varepsilon \sim 1 </script>; в следующем параграфе мы попытаемся "улучшить" его, расширив диапазон допустимых значений <script type="math/tex">\varepsilon</script>. 
+Однако сперва используем описанный подход для того, чтобы получить явную формулу для изменения <script type="math/tex">N_\parallel</script> между периферийной точкой запуска и первой точкой поворота траектории в эллиптическом токамаке. Мы  будем рассматривать медленную волну, предполагая для начала, что она не испытывает на первом проходе трансформации в быструю моду. 
+В этом случае можно использовать электростатическое дисперсионное уравнение:
+<script type="math/tex; mode=display"> H = \varepsilon_\perp k^2_\perp + \eta k^2_\parallel \tag{1.12} </script>
+Вообще говоря электростатическое приближение применимо при <script type="math/tex"> N_\parallel  \gg 1\</script>, но оказывается, что оно дает удовлетворительные результаты вплоть до значений <script type="math/tex"> N_\parallel \</script>, соответствующих трансформации быстрой и медленной волн. Кроме того, в рамках этого приближения можно определить, произойдет на самом деле трансформация или нет.
+Введем для удобства новые переменные, обозначив 
+<script type="math/tex">\rho/a \rightarrow \rho</script>, <script type="math/tex">m/n \rightarrow \mu</script>, <script type="math/tex">P/n \rightarrow P</script>.
+Подставляя уравнения (1.6), (1.7) для <script type="math/tex">k_\perp</script> и <script type="math/tex">k_\parallel</script> электростатическое дисперсионное уравнение (1.12), получим
+квадратное уравнение для <script type="math/tex">n_\rho</script>. Решая его относительно <script type="math/tex">n_\rho</script> в первом порядке по <script type="math/tex">\varepsilon</script> имеем
+<script type="math/tex; mode=display">\begin{equation}
+    \begin{aligned} 
+    &P = \pm P_0 + P_1 \\
+    &P_0(\mu, \rho) = \sqrt{\Phi(\rho)(\mu+q)^2-\mu^2/\rho^2} \\
+    &P_1(\mu, \rho, \theta) = g_{12} \mu  \pm \{\Phi(q + \mu)[q(g^1_{11}-g^1_{33})-\mu g^1_{22}] + \mu^2 g^1_{22}/\rho^2\}/2P_0
+    \end{aligned}
+    \tag{1.13}
+\end{equation}</script>
+</p>
+<p>где <script type="math/tex">\Phi = - \eta/\varepsilon_\perp ( a/R_0 q)^2</script>
+Знак ± здесь зависит от направления тороидального тока, тороидального магнитного поля и знака тороидального волнового числа, 
+то есть от знака произведения <script type="math/tex">IB_\varphi n). 
+Для линейных по \(\varepsilon</script> составляющих компонент метрического тензора имеем из (1.4) :
+<script type="math/tex; mode=display">\begin{equation}
+    \begin{aligned} 
+        g^1_{11} = \\
+        g^1_{22} =  \\
+        g^1_{33} =    \\
+        g_{12} = 
+    \end{aligned}
+\end{equation}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\begin{equation}
+ \left.\begin{aligned}
+        B'&=-\partial \times E,\\
+        E'&=\partial \times B - 4\pi j,
+       \end{aligned}
+ \right\}
+ \qquad \text{Maxwell's equations}
+\end{equation}</script>
+</p>
+<p>Для определенности будем считать, что частота волны ш в несколько раз превышает значение центральной нижнегибридной
+соответствующих трансформации быстрой и медленной волн. Кроме того, в рамках этого приближения можно определить, произойдет на самом деле трансформация или нет.
+Введем для удобства новые переменные, обозначив р/а-<em>р,
+т/п-р. и Р/п-Р. Подставляя уравнения (1.6), (1.7) для к± и к электростатическое дисперсионное уравнение (1.12), получим
+квадратное уравнение для п0. Решая его относительно п_ в первом Г   г</em>
+порядке по 8 имеем
+р=±р0+р1 ,
+РО(Ц,Р) = / Ф(р)(Ц+ч)2-|хг/рЙ   (1.13)
+Р1 (p,p,6)=
+где ®=-'Q/eI(a/Roq)2.
+Знак ± здесь зависит от направления тороидального тока, тороидального магнитного поля и знака тороидального волнового числа, то есть от знака произведения (IB^n). Для линейных по 8 составляющих компонент метрического тензора имеем из (1.4) :
+g^ = -2Д' 0080+ (Лр)' (1 -00826)
+g,L= Л (1+00826)
+22  (1.14)
+&lt;33= 28роов6
+g^ 2=Д'sin6+(Л+Л'р/2)в!п26
+Для определенности будем считать, что частота волны ш в несколько раз превышает значение центральной нижнегибридной</p>
+<p>соответствующих трансформации быстрой и медленной волн. Кроме того, в рамках этого приближения можно определить, произойдет на самом деле трансформация или нет.
+Введем для удобства новые переменные, обозначив р/а-<em>р,
+т/п-р. и Р/п-Р. Подставляя уравнения (1.6), (1.7) для к± и к электростатическое дисперсионное уравнение (1.12), получим
+квадратное уравнение для п0. Решая его относительно п_ в первом Г   г</em>
+порядке по 8 имеем
+р=±р0+р1 ,
+РО(Ц,Р) = / Ф(р)(Ц+ч)2-|хг/рЙ   (1.13)
+Р1 (p,p,6)=
+где ®=-'Q/eI(a/Roq)2.
+Знак ± здесь зависит от направления тороидального тока, тороидального магнитного поля и знака тороидального волнового числа, то есть от знака произведения (IB^n). Для линейных по 8 составляющих компонент метрического тензора имеем из (1.4) :
+g^ = -2Д' 0080+ (Лр)' (1 -00826)
+g,L= Л (1+00826)
+22  (1.14)
+&lt;33= 28роов6
+g^ 2=Д'sin6+(Л+Л'р/2)в!п26
+Для определенности будем считать, что частота волны ш в несколько раз превышает значение центральной нижнегибридной</p>
+<p>Тогда мы можем пренебречь зависимостью 8 от 0.
+Полагая начальное значение полоидального волнового числа ц.=0 (это справедливо для волн, запускаемых с помощью стандартного "грилла") и подставляя (1.13), (1.14) в (1.11) получим:
+Q(p)= f уф(р' )dp' ,</p>
+<p>(A' +£p)coe(Q±Q)+(Ap)/cos(20±2Q) }dp (1.16)
+Ро
+Интегрирование здесь должно производиться между радиальными координатами точки запуска траектории р^ и точки ее первого поворота р°, которые могут быть определены в нулевом приближении из уравнения Ф=0. Уравнение (1.16) удобно представить в форме с амплитудой и фазой: Ц°- а1в1п(±0+ф1) + ^а?з1п(±20+Ф2) и, таким образом, задача нахождения сводится к простому интегрированию для определения а1, а2, Ф1, Ф2&lt; По известному |4° глубина проникновения р° может быть пересчитана с лучшей точностью как меньший (на интервале [0,1]) корень уравнения:
+p0q(p0)v4(p°)
+±|1 = ±       <br>
+1 тр°/ Ф(р°)</p>
+<p>Наконец изменение N дается выражением, следующим из (1.6):</p>
+<p>AN ц =N|| (p,°/q (р° )+6оов0о)</p>
+<p>В качестве конкретного примера рассмотрим конфигурацию с простыми модельными профилями:
+«(р)-чо(1+(а-1)р2)
+Ф(РМО ■■ 1-Р2-— 2   И-’9)
+[(1 + (Q-1 )Р2]
+А(р)=АаР2 • А(р).-Лар ,
+где Q=q1/qQ, Ф(у=Ф(О). В этом случае интеграл (1.15) для □ легко берется после замены переменной интегрирования p=einT , 
+что дает в результате
+П(р)= угр {ч^З arotg - т}   (1.20)</p>
+<p>Нужно отметить, что эта формула неверна при р=0, поскольку при этом члены с т-»0 дают в интеграл конечный вклад, который в данном случае равен тс. Мы в дальнейшем будем его игнорировать, поскольку он лишь отражает особенность полярной системы координат, когда изменеие угла вдоль траекторий, проходящих по разные стороны от центра, отличатся на 2ТС.
+Подставляя (1.20) в (1.16), после некоторых преобразований конечный результат для амплитуд и фаз можно выразить через две функции Тиф, зависящие от двух переменных
+Z=V^O/Q= V(-7]0/Ei0) a/qa и Q=Qa/Qo
+При этом
+a1«(A'+e)QI(z,Q),   ао= Л QI(2z,Q),
+1 а *- а    (1.21)
+ф,=ф(г,О),  ф2«ф(22,0)
+Функции I и ф могут быть представлены в виде:
+1= /л^А? ,  ф=агсгё(А1/А2), где
+ТС/2    ,,
+A^ = f совх sin'x sintf dx
+°   (1.22)
+ТС/2    о
+A2=f совх sin x cos'O &lt;ix
+zQ.-.— Q(x) , Q+1</p>
+<p>графики этих функций показаны на рис.За»36. Кривые (1) и (3) на этих рисунках соответствуют предельным случаям Q=l и 0~&lt;ю , таким образом кривая для любого конкретного профиля q находится между ними. Как следует из (1 .21 ), (1.22) при Q»1 функции Тиф становятся практически независимыми от этого параметра, так что уже при Q£3 о хорошей точностью можно пользоваться предельной кривой С ростом z функции Тиф достигают своих предельных </p>
+    </div>
+  </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>FRTС project was developed by Popov's Lab<br>&copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-01-20 04:20              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="..\../tipuesearch/tipuesearch_content.js"></script>
+          <script src="..\../tipuesearch/tipuesearch_set.js"></script>
+          <script src="..\../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
